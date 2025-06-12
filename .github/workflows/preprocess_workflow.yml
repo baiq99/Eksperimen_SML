@@ -29,7 +29,7 @@ jobs:
         python Preprocessing/automate_Baiq-Ega-Aulia.py
 
     - name: Upload preprocessed dataset as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4  
       with:
         name: preprocessed-dataset
         path: Preprocessing/Dataset/online_shoppers_intention_preprocessed_2.csv
