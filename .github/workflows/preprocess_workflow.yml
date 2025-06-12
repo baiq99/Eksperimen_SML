@@ -5,7 +5,7 @@ on:
     paths:
       - 'Preprocessing/**'
       - '.github/workflows/**'
-  workflow_dispatch:  # Allow manual run from GitHub UI
+  workflow_dispatch:
 
 jobs:
   run-preprocessing:
@@ -27,3 +27,9 @@ jobs:
     - name: Run preprocessing script
       run: |
         python Preprocessing/automate_Baiq-Ega-Aulia.py
+
+    - name: Upload preprocessed dataset as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: preprocessed-dataset
+        path: Preprocessing/Dataset/online_shoppers_intention_preprocessed_2.csv
